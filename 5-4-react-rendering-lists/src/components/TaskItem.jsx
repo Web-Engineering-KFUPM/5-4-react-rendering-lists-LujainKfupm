@@ -6,9 +6,10 @@ return (
 <li className="task" key={task.id}>
 <label className="taskMain">
     {!task.isDone && <DueBadge dueDate={task.dueDate} />}
-<input type="checkbox" />
+<input type="checkbox" checked={task.isDone} onChange={() => onToggle(task.id)} />
 </label>
-    <button className="ghost" aria-label="Delete task">
+    <span className="title">{task.title}</span>
+    <button className="ghost" aria-label="Delete task" onClick={() => onDelete(task.id)}>
 ✕
 </button>
 </li>
